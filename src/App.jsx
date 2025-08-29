@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HamburgerMenu from "./components/HamburgerMenu";
-import Random from "./components/Random";
 import Home from "./pages/Home";
 import Settings from "./pages/Settings";
 import About from "./pages/About";
