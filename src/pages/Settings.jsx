@@ -38,6 +38,12 @@ export default function Settings() {
           isActive={themePick === 2}
           onClick={() => setThemePick(2)}
         />
+        <ThemeButton
+          numCircles={2}
+          circleColors={["black", "white"]}
+          isActive={themePick === 3}
+          onClick={() => setThemePick(3)}
+        />
       </div>
 
       <div style={styles(theme).settingsContainer}>

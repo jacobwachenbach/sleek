@@ -22,6 +22,12 @@ const colorPalettes = {
     primary: "#1e1e1e",
     title: "black",
   },
+  3: {
+    background: "black",
+    text: "white",
+    primary: "#white",
+    title: "white",
+  },
 };
 
 // create context
