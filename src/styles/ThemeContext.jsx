@@ -7,25 +7,25 @@ const colorPalettes = {
   0: {
     background: "#282b30",
     text: "#7289da",
-    primary: "#424549",
+    primary: "#7289da",
     title: "#7289da",
   },
   1: {
     background: "#2d2d30",
     text: "#007acc",
-    primary: "#2d2d30",
+    primary: "#007acc",
     title: "#007acc",
   },
   2: {
     background: "white",
     text: "black",
-    primary: "#1e1e1e",
+    primary: "black",
     title: "black",
   },
   3: {
     background: "black",
     text: "white",
-    primary: "#white",
+    primary: "white",
     title: "white",
   },
 };
