@@ -4,12 +4,11 @@ import HamburgerMenu from "./components/HamburgerMenu";
 import Home from "./pages/Home";
 import Settings from "./pages/Settings";
 import About from "./pages/About";
-import { ThemeContext } from "./styles/ThemeContext";  // ✅ use context, not baseTheme
+import ProjectPage from "./pages/ProjectPage";   // ✅ import here
+import { ThemeContext } from "./styles/ThemeContext";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-
-  // ✅ Get the live theme from context
   const { theme } = useContext(ThemeContext);
 
   return (
@@ -39,6 +38,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/about" element={<About />} />
+            <Route path="/project/:id" element={<ProjectPage />} />
           </Routes>
         </div>
       </div>

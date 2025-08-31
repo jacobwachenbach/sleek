@@ -4,13 +4,16 @@ import App from "./App";   // ✅ Import App.jsx
 import "@fontsource/titillium-web/400.css";
 import "@fontsource/titillium-web/400-italic.css";
 
-import { ThemeProvider } from "./styles/ThemeContext"; // ✅ Correct import
+import { ThemeProvider } from "./styles/ThemeContext"; 
+import { ProjectsProvider } from "./context/ProjectsContext.jsx"; // ✅ explicitly use .jsx
 
 const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
   <ThemeProvider>
-    <App />
+    <ProjectsProvider>
+      <App />
+    </ProjectsProvider>
   </ThemeProvider>
 );

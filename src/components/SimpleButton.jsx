@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../styles/ThemeContext";
 
-// ✅ Correct syntax: arrow function with props
-const SimpleButton = ({ textPlaceHolder }) => {
+// ✅ use lowercase `onClick` like normal React prop
+const SimpleButton = ({ textPlaceHolder, onClick }) => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <div style={styles(theme).container}>
-      <span>{textPlaceHolder}</span>   {/* ✅ render placeholder text */}
+    <div style={styles(theme).container} onClick={onClick}>
+      <span>{textPlaceHolder}</span>
     </div>
   );
 };
@@ -19,10 +19,11 @@ const styles = (theme) => ({
   container: {
     border: `1px solid ${theme.colors.primary}`,
     borderRadius: "6px",
-    padding: "4px 8px",
+    padding: "6px 12px",
     cursor: "pointer",
     color: theme.colors.text,
     backgroundColor: theme.colors.background,
+    userSelect: "none",
   },
 });
 
