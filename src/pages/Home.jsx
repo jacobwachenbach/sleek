@@ -61,10 +61,10 @@ export default function Home() {
           <Link key={p.id} to={`/project/${p.id}`} style={{ textDecoration: "none" }}>
             <ProjectPanel
               name={p.projectName}
-              type={p.projectType}
               description={p.description}
               created={p.created}
               lastEdited={p.lastEdited}
+              coverUrl={p.coverUrl}        // ✅ show cover on card
             />
           </Link>
         ))}
@@ -77,7 +77,7 @@ export default function Home() {
  *  @returns {{ [key: string]: import('react').CSSProperties }}
  */
 const styles = (theme) => ({
-  // Search
+  // 🔍 Search
   SearchBarContainer: {
     display: "flex",
     flexDirection: "row",
@@ -89,9 +89,9 @@ const styles = (theme) => ({
     alignItems: "center",
     width: "35vw",
     height: "40px",
-    border: `1px solid ${theme.colors.primary}`,
+    border: `1px solid ${theme.colors.border}`,   // ✅ border
     borderRadius: "8px",
-    backgroundColor: theme.colors.background,
+    backgroundColor: theme.colors.surface,        // ✅ surface, not full bg
     padding: "0 10px",
   },
   SearchBar: {
@@ -105,45 +105,49 @@ const styles = (theme) => ({
   },
   SearchIcon: {
     marginLeft: "8px",
-    color: theme.colors.primary,
+    color: theme.colors.primary,                  // ✅ accent
     flexShrink: 0,
   },
 
-  // CRUD row
+  // ⚙️ CRUD row
   CrudBarContainer: {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
     gap: "12px",
     width: "100%",
+    borderBottom: `1px solid ${theme.colors.border}`, // ✅ subtle divider
+    paddingBottom: "8px",
   },
   Divider: {
     flex: 1,
     border: 0,
     height: "1px",
-    backgroundColor: theme.colors.primary,
+    backgroundColor: theme.colors.border,         // ✅ border, not primary
   },
 
-  // Modal
+  // 🪟 Modal
   modalOverlay: {
     position: "fixed",
     inset: 0,
-    backgroundColor: "rgba(0,0,0,0.5)",
+    backgroundColor: "rgba(0,0,0,0.55)",          // ✅ stronger dim
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     zIndex: 2000,
   },
   modalContent: {
-    backgroundColor: theme.colors.background,
+    backgroundColor: theme.colors.panel,          // ✅ panel surface
     borderRadius: "10px",
     padding: "20px",
     minWidth: "420px",
     maxWidth: "90vw",
     boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+    border: `1px solid ${theme.colors.border}`,   // ✅ border
+    color: theme.colors.text,
   },
 
-  // Panels grid (wrap)
+  // 📦 Panels grid (wrap)
   PanelContainers: {
     display: "flex",
     flexWrap: "wrap",

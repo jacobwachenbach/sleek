@@ -1,19 +1,34 @@
+// src/context/ProjectsContext.jsx
 import React, { createContext, useState } from "react";
 
+// create context
 export const ProjectsContext = createContext();
 
+// provider
 export function ProjectsProvider({ children }) {
-  const [projects, setProjects] = useState([]);
+  // ✅ preload with one default project
+  const [projects, setProjects] = useState([
+    {
+      id: 1,
+      projectName: "Demo Project",
+      description: "This is a demo project. Double-click or hover to edit the title and description.",
+      projectType: "Default",
+      coverUrl: "https://picsum.photos/1200/400", // sample cover
+      created: new Date().toLocaleString(),
+      lastEdited: new Date().toLocaleString(),
+    },
+  ]);
 
-  const addProject = (projectData) => {
-    const now = new Date().toLocaleString();
-    const newProject = {
-      id: Date.now(),
-      ...projectData,
-      created: now,
-      lastEdited: now,
-    };
-    setProjects((prev) => [...prev, newProject]);
+  const addProject = (project) => {
+    setProjects((prev) => [
+      ...prev,
+      {
+        ...project,
+        id: Date.now(),
+        created: new Date().toLocaleString(),
+        lastEdited: new Date().toLocaleString(),
+      },
+    ]);
   };
 
   return (
